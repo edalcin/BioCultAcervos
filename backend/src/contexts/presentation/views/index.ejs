@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %> - <%= contextName %></title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <script src="https://unpkg.com/htmx.org@1.9.10" defer></script>
+  <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+
+  <header class="bg-forest-700 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex items-center gap-4">
+        <div>
+          <h1 class="text-2xl font-bold text-white mb-0"><%= contextName %></h1>
+          <p class="text-forest-100 text-sm"><%= contextDescription %></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="bg-forest-600 text-white border-b border-forest-800">
+    <div class="container mx-auto px-4">
+      <ul class="flex gap-0">
+        <li>
+          <a href="/" class="block px-6 py-3 hover:bg-forest-700 transition-colors border-b-2 border-forest-400 font-medium">
+            Início
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="flex-grow container mx-auto px-4 py-8">
+
+    <section class="card mb-8">
+      <h2>Unidade de Acervos Históricos e Museológicos</h2>
+      <p class="text-gray-700 leading-relaxed">
+        O BioCultAcervos registra e torna rastreáveis as evidências de conhecimento tradicional
+        associado à biodiversidade preservadas em coleções, registros e documentos de museus e
+        arquivos históricos — uma quarta fonte, complementar às fontes secundárias (artigos
+        científicos, via BioCultDB), primárias (registro de campo, via BioCultRelatos) e às obras
+        de naturalistas (via BioCultNaturalistas). Cada acervo membro da federação opera sua
+        própria unidade soberana: um container, um arquivo de dados, autoridade sobre o que publica.
+      </p>
+      <p class="text-gray-700 leading-relaxed mt-4">
+        A evidência aqui registrada já está preservada no acervo, sem contato direto e contínuo com
+        detentores vivos do conhecimento — por isso não há, nesta unidade, um fluxo de
+        <strong>Consentimento Livre, Prévio e Informado</strong> obrigatório em campo. Isso não
+        dispensa os princípios <strong>C.A.R.E.</strong>: a autoridade sobre como o conhecimento
+        tradicional descrito no acervo é registrado e compartilhado permanece com a comunidade a
+        que ele se refere.
+      </p>
+    </section>
+
+    <h2>Contextos desta unidade</h2>
+    <div class="grid gap-6 md:grid-cols-2 mb-8">
+
+      <div class="card">
+        <h3>Registro, curadoria e demais contextos</h3>
+        <p class="text-gray-600 text-sm">
+          Ainda não definidos: dependem do desenho de produto desta unidade (integracao.md §2.3).
+          Nenhuma tela além da home page existe hoje.
+        </p>
+        <span class="badge bg-gray-200 text-gray-800 mt-4 inline-block">Em definição</span>
+      </div>
+
+      <div class="card">
+        <h3>Apresentação</h3>
+        <p class="text-gray-600 text-sm">
+          Único contexto que já existe: esta própria home page.
+        </p>
+        <span class="badge bg-yellow-100 text-yellow-800 mt-4 inline-block">Em construção</span>
+      </div>
+
+    </div>
+
+    <section class="card">
+      <h3>Vocabulário controlado</h3>
+      <p class="text-gray-600 text-sm">
+        Os termos desta unidade são curados no <strong>BioCultTermos</strong>, que roda no mesmo
+        container e grava no mesmo arquivo de dados. O código do módulo é idêntico em todas as
+        unidades da federação; o vocabulário de cada acervo não sai daqui.
+      </p>
+      <p class="text-gray-500 text-xs mt-3">
+        Interface pública do vocabulário na porta 4000 desta unidade, quando o container estiver de pé.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-800 text-white py-6 mt-auto">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">BioCultAcervos — Unidade de Acervos Históricos e Museológicos da Arquitetura BioCultural</p>
+      <p class="text-xs text-gray-400 mt-1">
+        Dados de comunidades tradicionais seguindo princípios C.A.R.E.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
