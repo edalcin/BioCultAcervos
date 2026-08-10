@@ -69,6 +69,12 @@ tabela-fonte e a lista de campos monitorados sejam configuráveis, e os textos f
 genéricos. Trabalho de código no repositório **BioCultTermos** (compartilhado por todas as unidades),
 não específico desta unidade — o mesmo bloqueio já registrado para o BioCultRelatos.
 
+**Nota (ADR-014 N3):** quando esta generalização declarar a lista de campos monitorados, ou quando o
+BioCultAcervos vier a declarar seu próprio contrato de campos, nenhum dos dois pode incluir caminho de
+nome científico — a nomenclatura científica está fora do escopo do vocabulário controlado da federação
+(ADR-014). Isso não muda o nome científico como dado desta unidade, que segue campo de primeira classe
+onde vier a existir no schema de evidências do acervo.
+
 ### 2.2 Nome do arquivo SQLite
 
 `SQLITE_DB_PATH=/data/unidade.sqlite` desde o primeiro deploy (nome canônico da ADR-005) — sem dado
