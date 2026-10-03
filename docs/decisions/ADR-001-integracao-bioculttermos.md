@@ -6,7 +6,7 @@
 
 ## Contexto
 
-A Arquitetura BioCultural v3.2 (`Arquitetura-BioCultural/docs/architecture-decisions/ADR-004-federated-architecture.md`
+A Arquitetura BioCultural v3.2 (`Arquitetura-BioCultural/docs/tecnico/architecture-decisions/ADR-004-federated-architecture.md`
 e `ADR-005-sqlite-json-persistence.md`) já define, no nível arquitetural, que toda unidade **Acervos
 Históricos e Museológicos** membro da federação opera uma unidade com **um único container** rodando
 BioCultAcervos (registro de evidências de conhecimento tradicional preservadas em coleções, registros e
@@ -134,8 +134,8 @@ Os pontos a seguir **não** são herdados automaticamente — exigem decisão/tr
 
 ## Referências
 
-- `Arquitetura-BioCultural/docs/architecture-decisions/ADR-004-federated-architecture.md`
-- `Arquitetura-BioCultural/docs/architecture-decisions/ADR-005-sqlite-json-persistence.md`
+- `Arquitetura-BioCultural/docs/tecnico/architecture-decisions/ADR-004-federated-architecture.md`
+- `Arquitetura-BioCultural/docs/tecnico/architecture-decisions/ADR-005-sqlite-json-persistence.md`
 - `BioCultDB/integracao.md` e `BioCultDB/docs/decisions/ADR-001-integracao-bioculttermos.md` (modelo de
   implementação real, referência primária desta ADR)
 - `BioCultRelatos/integracao.md` e `BioCultRelatos/docs/decisions/ADR-001-integracao-bioculttermos.md`

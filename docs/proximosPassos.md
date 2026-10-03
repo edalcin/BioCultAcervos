@@ -2,7 +2,7 @@
 
 > **Documento de estado desta unidade.** Registra onde o BioCultAcervos está e o que falta fazer. Ponto de entrada de qualquer nova sessão de trabalho — humana ou assistida por IA.
 >
-> Pendência de arquitetura da federação **não** mora aqui: mora em [`Arquitetura-BioCultural/docs/proximosPassos.md`](https://github.com/edalcin/Arquitetura-BioCultural/blob/main/docs/proximosPassos.md), que é a referência única do projeto. Aqui ficam só as pendências desta unidade.
+> Pendência de arquitetura da federação **não** mora aqui: mora em [`Arquitetura-BioCultural/docs/tecnico/proximosPassos.md`](https://github.com/edalcin/Arquitetura-BioCultural/blob/main/docs/tecnico/proximosPassos.md), que é a referência única do projeto. Aqui ficam só as pendências desta unidade.
 >
 > **Regras de manutenção:** ao final de cada sessão, atualizar a data, o estado e a lista de pendências. Pendência resolvida não é apagada: é marcada como feita, com o `onde`. Caminhos são relativos à raiz deste repositório.
 
@@ -36,4 +36,4 @@ Estudo de caso: **Coleção Etnobotânica do JBRJ (RBetno)**, no *Index Herbario
 | Checklist de integração BioCultTermos (oito passos) | `integracao.md` |
 | Decisões desta unidade | `docs/decisions/` |
 | Artigo sobre a digitalização da coleção | `docs/Plants People Planet - 2025 - Fonseca-Kruel ... .pdf` |
-| Referência única do projeto | <https://github.com/edalcin/Arquitetura-BioCultural/blob/main/docs/proximosPassos.md> |
+| Referência única do projeto | <https://github.com/edalcin/Arquitetura-BioCultural/blob/main/docs/tecnico/proximosPassos.md> |
