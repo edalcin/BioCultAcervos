@@ -2,32 +2,40 @@
 
 Registro de evidências da relação de comunidades tradicionais com a biodiversidade, presentes em **acervos históricos e museológicos**.
 
-[![GitHub](https://img.shields.io/badge/GitHub-BioCultAcervos-181717?logo=github)](https://github.com/edalcin/BioCultAcervos)
+> **Status**: proposta, sem implementação; aberta a quem quiser assumir. Este repositório contém só documentação — nenhuma tecnologia está definida.
 
-> **Status**: Fase inicial — apenas repositório e documentação.
+## O que é
 
----
+Uma visão de como a unidade **Acervos Históricos e Museológicos** da [Arquitetura BioCultural](https://github.com/edalcin/Arquitetura-BioCultural) poderia ser implementada. Guarda a evidência física custodiada por instituições (museus, arquivos, coleções): matérias-primas e artefatos vegetais, exsicatas, peças de coleções etnológicas. Complementa as fontes secundárias ([BioCultDB](https://github.com/edalcin/BioCultDB)), os registros de campo ([BioCultRelatos](https://github.com/edalcin/BioCultRelatos)) e as obras de naturalistas ([BioCultNaturalistas](https://github.com/edalcin/BioCultNaturalistas)).
 
-## O que é o BioCultAcervos?
+- **Tipo de fonte**: acervo histórico/museológico; regime enunciativo sempre `evidencia` (ADR-015).
+- **Narrativa da comunidade** sobre uma peça não vive aqui: vive no BioCultRelatos da própria comunidade, que referencia o item. As duas descrições coexistem, sem uma sobrescrever a outra.
+- **Procedência**: instituição custodiante, número de tombo/registro, data de entrada e, quando conhecida, a cadeia de aquisição — inclusive quando problemática.
 
-O **BioCultAcervos** é o componente da [Arquitetura BioCultural](https://github.com/edalcin/Arquitetura-BioCultural) dedicado a registrar e tornar rastreáveis as evidências de conhecimento tradicional associado à biodiversidade preservadas em coleções, registros e documentos de **museus e acervos históricos** — uma fonte complementar às fontes secundárias (artigos científicos, via [BioCultDB](https://github.com/edalcin/BioCultDB)), primárias (registro de campo, via [BioCultRelatos](https://github.com/edalcin/BioCultRelatos)) e às obras de naturalistas (via [BioCultNaturalistas](https://github.com/edalcin/BioCultNaturalistas)).
+## Papel na federação
 
-## Posição na Arquitetura Federada
+```mermaid
+flowchart LR
+  A["Unidade Acervos<br/>(uma por instituição)"] -- vocabulário soberano --- T[BioCultTermos]
+  A -- harvest --> P[Pluriverso]
+  T -- mapeamentos SKOS-XL --> P
+```
 
-Na arquitetura federada da [Arquitetura BioCultural](https://github.com/edalcin/Arquitetura-BioCultural), o BioCultAcervos será o componente central de um novo tipo de membro — **Acervos Históricos e Museológicos** — seguindo o mesmo padrão de soberania dos demais membros: container próprio, arquivo SQLite+JSON compartilhado com uma instância soberana do [BioCultTermos](https://github.com/edalcin/BioCultTermos), e endpoint de harvest REST para o [Pluriverso](https://github.com/edalcin/pluriverso). A camada semântica dessa instância é gerida pelo BioCultTermos embutido (vocabulários soberanos do membro); o Pluriverso unifica essa camada com as dos demais membros por meio de mapeamentos SKOS-XL (`skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`), sem jamais assumir a posse dos vocabulários.
+- Cada acervo membro é uma **unidade soberana**: dados, vocabulário e credenciais próprios, sem compartilhar nada com outro acervo.
+- Cada unidade mantém seu vocabulário no [BioCultTermos](https://github.com/edalcin/BioCultTermos); o [Pluriverso](https://github.com/edalcin/pluriverso) unifica os vocabulários por mapeamentos SKOS-XL e coleta os registros pelo contrato de harvest (ADR-016).
+- Vocabulário controlado não inclui nomenclatura científica (ADR-014).
+- Visão de arquitetura: por ser institucional e as instituições já terem infraestrutura web, esta unidade pode ser uma ferramenta web (ao contrário de BioCultDB, BioCultRelatos e BioCultNaturalistas, vislumbradas como ferramentas stand-alone locais).
 
-**Integração técnica com BioCultTermos**: via git submodule, seguindo o mesmo padrão já em produção no BioCultDB e planejado no BioCultRelatos — repositório único compartilhado entre as unidades, congelado como produto standalone (ver [ADR-007](https://github.com/edalcin/Arquitetura-BioCultural/blob/main/docs/tecnico/architecture-decisions/ADR-007-shared-bioculttermos-module.md) da Arquitetura BioCultural). Detalhes desta integração específica em `docs/decisions/ADR-001-integracao-bioculttermos.md` e `integracao.md`.
+## Governança
 
-## Princípios C.A.R.E.
+Seguem integralmente os princípios **C.A.R.E.** (Collective Benefit, Authority to Control, Responsibility, Ethics): a autoridade sobre como o conhecimento tradicional descrito no acervo é registrado e compartilhado permanece com a comunidade de origem, mesmo sem CLPI direto. Como o acervo trata de comunidades que nunca foram consultadas, aplica **Notices** (*Attribution Incomplete*, *Open to Collaborate*) em vez de Labels do Local Contexts; se a comunidade se manifestar, a Notice cede lugar ao Label que ela escolher. Digitalização não é repatriação. Ver a [proposta de governança](https://github.com/edalcin/Arquitetura-BioCultural/blob/main/docs/Governanca/Proposta/propostaGovernanca.md).
 
-Assim como os demais componentes da federação, o BioCultAcervos respeitará pleno e absolutamente os princípios **C.A.R.E.** (Collective Benefit, Authority to Control, Responsibility, Ethics): mesmo quando a evidência vem de um acervo histórico ou museológico, a autoridade sobre como o conhecimento tradicional nela descrito é registrado e compartilhado permanece com a comunidade a que ele se refere.
+## Mais
 
-## Contato
-
-[GitHub Issues](https://github.com/edalcin/BioCultAcervos/issues) · edalcin@jbrj.gov.br
-
----
+- Decisão desta unidade: [ADR-001](docs/decisions/ADR-001-integracao-bioculttermos.md)
+- Estado e pendências: [docs/proximosPassos.md](docs/proximosPassos.md)
+- Contato: [GitHub Issues](https://github.com/edalcin/BioCultAcervos/issues) · edalcin@jbrj.gov.br
 
 ## Agradecimentos
 
-A formulação desta proposta técnica e a consolidação de sua visão ética e conceitual não seriam possíveis sem os diálogos, provocações e insights preciosos de parceiros fundamentais. Registro meu profundo agradecimento à Viviane Fonseca, do Jardim Botânico do Rio de Janeiro (JBRJ); ao Lucas Zelesco, da Fundação Nacional dos Povos Indígenas (FUNAI); e aos membros do Comitê Gestor Useflora, cuja dedicação à salvaguarda da sociobiodiversidade e ao respeito às comunidades tradicionais inspirou cada linha de código e de arquitetura deste projeto.
+A formulação desta proposta não seria possível sem os diálogos e insights de Viviane Fonseca (JBRJ), Lucas Zelesco (FUNAI) e dos membros do Comitê Gestor Useflora, cuja dedicação à salvaguarda da sociobiodiversidade inspirou esta arquitetura.
